@@ -1048,3 +1048,9 @@ footer a {
 .app:not(.cms-site) .hero-content > p { display:none; }
 .app:not(.cms-site) .hero-content .small-title { display:block; }
 @media (max-width:600px) { .app:not(.cms-site) .header::before { font-size:9px; }.app:not(.cms-site) .hero { min-height:575px; padding-top:68px; background-position:62% center!important; }.app:not(.cms-site) .hero-content::before { font-size:53px; }.app:not(.cms-site) .hero-content::after { font-size:15px; }.app:not(.cms-site) .hero button { margin-top:29px; } }
+
+
+/* Full product photography: no cropped abayas in catalogue cards */
+.app:not(.cms-site) .product-image { display:grid; place-items:center; padding:10px; background:#f7f2f7; }
+.app:not(.cms-site) .product-image img { width:100%; height:100%; object-fit:contain; object-position:center; }
+@media (max-width:600px) { .app:not(.cms-site) .product-image { height:430px; padding:12px; } }
