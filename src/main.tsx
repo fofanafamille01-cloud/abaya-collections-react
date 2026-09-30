@@ -127,6 +127,9 @@ function Router() {
   const slug = path === '/' ? 'accueil' : path.replace(/^\//, '').split('/')[0];
   useEffect(() => { if (!path.startsWith('/admin')) getPublicPage(slug).then(setPage).catch(() => setPage(null)); }, [slug, path]);
   if (path.startsWith('/admin')) return <Admin />;
+  // Keep the original storefront, catalogue and checkout as the permanent
+  // homepage. The no-code CMS remains available for additional pages.
+  if (path === '/') return <App />;
   if (page === undefined) return <App />;
   return page ? <CmsPageApp page={page} /> : <App />;
 }
